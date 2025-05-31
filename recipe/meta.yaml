@@ -1,18 +1,20 @@
 {% set name = "spyder-vim" %}
+{% set import = "spyder_vim" %}
 {% set version = "0.1.0" %}
+{% set sha256 = "97c2ef31ae9bb24af1853d3741081cc27867f4c170e031a07daa213cc79577ca" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 97c2ef31ae9bb24af1853d3741081cc27867f4c170e031a07daa213cc79577ca
+  url: https://pypi.org/packages/source/{{ name[0]|lower }}/{{ name|lower }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps
   number: 1
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -26,7 +28,7 @@ requirements:
 
 test:
   imports:
-    - spyder_vim
+    - {{ import }}
   commands:
     - pip check
   requires:
@@ -34,19 +36,21 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/spyder-ide/spyder-vim
-  summary: A plugin to enable Vim keybindings in the Spyder IDE's editor
+  home: https://www.spyder-ide.org/
   license: MIT
   license_file: LICENSE.txt
+  summary: A plugin to enable Vim keybindings in the Spyder IDE's editor
   description: |
     Spyder Plugin for executing Vim commands inside the editor.
     Although it does not currently support many Vim commands, more will be added in the future.
     After installing Spyder-Vim, you need to close and re-open Spyder if its running.
     You should see the plugin at the bottom of the Editor.
+  doc_url: https://github.com/spyder-ide/spyder-vim/blob/master/README.md
+  dev_url: https://github.com/spyder-ide/spyder-vim
 
 extra:
   recipe-maintainers:
-    - CAM-Gerlach 
+    - CAM-Gerlach
     - ccordoba12
     - dalthviz
     - ok97465
