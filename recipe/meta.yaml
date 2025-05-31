@@ -20,11 +20,12 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - qtpy
     - qtawesome
-    - spyder >=5.3.3
+    - spyder >=5.3.3,<6
 
 test:
   imports:
