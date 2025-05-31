@@ -3,11 +3,15 @@ About spyder-vim-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/spyder-vim-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/spyder-ide/spyder-vim
+Home: https://www.spyder-ide.org/
 
 Package license: MIT
 
 Summary: A plugin to enable Vim keybindings in the Spyder IDE's editor
+
+Development: https://github.com/spyder-ide/spyder-vim
+
+Documentation: https://github.com/spyder-ide/spyder-vim/blob/master/README.md
 
 Spyder Plugin for executing Vim commands inside the editor.
 Although it does not currently support many Vim commands, more will be added in the future.
